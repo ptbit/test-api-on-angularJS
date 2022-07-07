@@ -1,0 +1,90 @@
+body{
+    background-color: rgba(46, 46, 239, 0.315);
+}
+
+h2 {
+    color: blue;
+    font-size: 43px;
+}
+.name {
+    color: blue;
+    font-weight: bold;
+    /* display: flex; */
+    /* font-size: 33px; */
+}
+thead span{
+    /* display: flex;
+    flex-direction: row;
+    margin-left: 25%; */
+}
+thead span .hide{
+    display: none;
+}
+thead span .show{
+    display: flex;
+}
+table , td{
+    border: 1px solid black;
+    text-align: center;
+    min-width: 150px;
+}
+.tableHeader{
+
+}
+.tableHeader .img{
+    font-weight: bold;
+    user-select: none;
+}
+
+thead{
+    cursor: pointer;
+}
+input{
+    width: 50px;
+    font-size: 20px;
+}
+.colorfilter{
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.filtermilk{
+    margin-bottom: 10px;
+}
+.filtermilk input{
+    margin-bottom: 5px;
+}
+.colorfilter select{
+    font-size: 22px;
+}
+/* AKS pagination Start */
+.pagination{
+    display: flex;
+    /* margin: 0 auto; */
+    justify-content: center;
+    max-width: 780px;
+}
+.pagination ul{
+    padding-left: 0px;
+}
+ul li {
+    list-style: none;
+    
+}
+.pagination li {
+    margin: 0 0 5px 5px;
+    float: left;
+}
+.pagination li {
+    display: block;
+    min-width: 34px;
+    padding: 0 3px;
+    height: 34px;
+    color: #fff;
+    line-height: 34px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 3px;
+    background: #bbb;
+    transition: all .3s linear;
+    user-select: none;
+}

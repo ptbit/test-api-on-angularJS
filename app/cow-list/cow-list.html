@@ -1,0 +1,84 @@
+<div class="colorfilter">
+    Choose color of cow:
+<select ng-model="FCV" ng-options="key for (key , value) in aColors" ng-change="selectColor()">
+    <!-- <option value="all">All</option> -->
+</select>
+</div>
+<div class="filtermilk">
+    Milk production min:
+    <input type="number" ng-model="FMAminV" placeholder="FMAminV" ng-change="FMAminVin()">
+    <br>
+    Milk production max:
+    <input type="number" ng-model="FMAmaxV" placeholder="FMAmaxV" ng-change="FMAmaxVin()">
+</div>
+<table>
+    <thead>
+        <!-- <h2 ng-if="message" ng-class="{'name': message=='ptb'}">{{message}}</h2> -->
+        <td ng-model="OBV" ng-click="OBVname()" ng-class="{'name': OBV == 'name'}"> 
+            <span class="tableHeader">
+                <div class="img">Name
+                <img ng-class="{'hide': OBV == 'name'}" ng-class="{'show': OBV != 'name'}" src="../../img/sort1.png">
+                <img ng-class="{'hide': OBV == '' || ODV == 'DESC' || OBV != 'name'}"  src="../../img/sort2.png">
+                <img ng-class="{'hide': OBV == '' || ODV == 'ASC' || OBV != 'name'}" ng-class="{'show': ODV == 'ASC'}" src="../../img/sort3.png">
+            </div>
+            </span>
+        </td>
+        <td ng-model="OBV" ng-click="OBVbd()" ng-class="{'name': OBV == 'bdate'}">
+            <span class="tableHeader">
+                <div class="img">BDate
+                <img ng-class="{'hide': OBV == 'bdate'}" ng-class="{'show': OBV != 'bdate'}" src="../../img/sort1.png">
+                <img ng-class="{'hide': OBV == '' || ODV == 'DESC' || OBV != 'bdate'}"  src="../../img/sort2.png">
+                <img ng-class="{'hide': OBV == '' || ODV == 'ASC' || OBV != 'bdate'}" ng-class="{'show': ODV == 'ASC'}" src="../../img/sort3.png">
+            </div>
+            </span>
+        </td>
+        <td ng-model="OBV" ng-click="OBVcolor()">
+            <span class="tableHeader">
+                <div class="img">Color
+                <img ng-class="{'hide': OBV == 'color'}" ng-class="{'show': OBV != 'color'}" src="../../img/sort1.png">
+                <img ng-class="{'hide': OBV == '' || ODV == 'DESC' || OBV != 'color'}"  src="../../img/sort2.png">
+                <img ng-class="{'hide': OBV == '' || ODV == 'ASC' || OBV != 'color'}" ng-class="{'show': ODV == 'ASC'}" src="../../img/sort3.png">
+            </div>
+            </span>
+        </td>
+        <td ng-model="OBV" ng-click="OBVma()">
+            <span class="tableHeader">
+                <div class="img">milk_avg
+                <img ng-class="{'hide': OBV == 'milk_avg'}" ng-class="{'show': OBV != 'milk_avg'}" src="../../img/sort1.png">
+                <img ng-class="{'hide': OBV == '' || ODV == 'DESC' || OBV != 'milk_avg'}"  src="../../img/sort2.png">
+                <img ng-class="{'hide': OBV == '' || ODV == 'ASC' || OBV != 'milk_avg'}" ng-class="{'show': ODV == 'ASC'}" src="../../img/sort3.png">
+            </div>
+            </span>
+        </td>
+        <td ng-model="OBV" ng-click="OBVage()">
+            <span class="tableHeader">
+                <div class="img">Age
+                <img ng-class="{'hide': OBV == 'age'}" ng-class="{'show': OBV != 'age'}" src="../../img/sort1.png">
+                <img ng-class="{'hide': OBV == '' || ODV == 'DESC' || OBV != 'age'}"  src="../../img/sort2.png">
+                <img ng-class="{'hide': OBV == '' || ODV == 'ASC' || OBV != 'age'}" ng-class="{'show': ODV == 'ASC'}" src="../../img/sort3.png">
+            </div>
+            </span>
+        </td>
+    </thead>
+    <tr ng-repeat="cow in cows">
+        <td>{{cow.name}}</td>
+        <td>{{cow.bdate}}</td>
+        <td>{{cow.color}}</td>
+        <td>{{cow.milk_avg}}</td>
+        <td>{{cow.age}}</td>
+    </tr>
+    <!-- <tr ng-repeat="cow in cows">{{cow.age}}</tr> -->
+</table>
+<!-- --- pagination aks start --- -->
+<br>
+<div class="pagination">
+<ul >
+    <li ng-repeat="n in range(needPages)" ng-click="PVin(n)">{{n}} </li>
+</ul>
+</div>
+<!-- --- pagination aks end --- -->
+<br>
+---
+
+<p>URL = {{URL}}</p>
+<h2>{{cowName}}</h2>
